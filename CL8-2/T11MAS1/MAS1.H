@@ -1,7 +1,7 @@
-void sluch(long int *, int);
-long int maxu(long int *, int);
-long int mini(long int *, int);
-double srar(long int *, int);
-void per(long int *, int);
-int cht(long int *, int);
-void vuv(long int *, int);
+void FillRand( long int *, int );
+long int GetMaxValue( long int *, int );
+long int GetMinValue( long int *, int );
+double Average( long int *, int );
+void Reverse( long int *, int );
+int EvenNumberWithOddAmount( long int *, int );
+void PrintArray( long int *, int );

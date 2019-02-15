@@ -1,18 +1,22 @@
 #include <stdio.h>
-#define MAX 10
+
 #include "mas1.h"
-void main(void)  3
-{long int a[MAX];
- printf("Массив:\n");
-  sluch(a, MAX);
-  vuv(a, MAX);
- printf("\n");
- printf("Максимум %li\n", maxu(a, MAX));
- printf("Минимум %li\n", mini(a, MAX));
- printf("Среднее арифм %lf\n", srar(a, MAX));
- printf("Количество четных чисел с нечетной суммой %i\n", cht(a, MAX));
- printf("Перевернутый массив:\n");
-  per(a, MAX);
-  vuv(a, MAX);
+
+#define MAX 10
+
+void main( void )
+{
+  long int a[MAX];
+  printf("Array is:\n");
+  FillRand(a, MAX);
+  PrintArray(a, MAX);
+  printf("\n");
+  printf("Max is %li\n", GetMaxValue(a, MAX));
+  printf("Min is %li\n", GetMinValue(a, MAX));
+  printf("Average is %lf\n", Average(a, MAX));
+  printf("Number of even numbers with an odd amount %i\n", EvenNumberWithOddAmount(a, MAX));
+  printf("Reverse array is:\n");
+  Reverse(a, MAX);
+  PrintArray(a, MAX);
  printf("\n");
 }

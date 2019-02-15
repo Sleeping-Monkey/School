@@ -1,44 +1,55 @@
 #include <stdio.h>
-int Day(int D, int M, int Y)
-{int N;
-if(M>2)
-    M++;
-else
-   {
-    M+=13;
-    Y--;
-   }
-N=(int)((Y*36525L/100+M*306/10+D-621050L)%7);
-return N;
-}
-void main(void)
-{int D, M, Y, N;
-printf("Введите день ");
-scanf("%d", &D);
-printf("Введите месяц ");
-scanf("%d", &M);
-printf("Введите год ");
-scanf("%d", &Y);
-N=Day(D, M, Y);
-if(N==0)
-    printf("День %d,%d,%d - понедельник", D, M, Y);
-else
-    if(N==1)
-        printf("День %d,%d,%d - вторник", D, M, Y);
-    else
-        if(N==2)
-            printf("День %d,%d,%d - среда", D, M, Y);
-        else
-            if(N==3)
-                printf("День %d,%d,%d - четверг", D, M, Y);
-            else
-                if(N==4)
-                    printf("День %d,%d,%d - пятница", D, M, Y);
-                else
-                    if(N==5)
-                        printf("День %d,%d,%d - суббота", D, M, Y);
-                    else
-                        if(N==6)
-                        printf("День %d,%d,%d - воскресенье", D, M, Y);
 
+int Day( int D, int M, int Y )
+{
+  int N;
+
+  if (M > 2)
+    M++;
+  else
+  {
+    M += 13;
+    Y--;
+  }
+  N = (int)((Y * 36525L / 100 + M * 306 / 10 + D - 621050L) % 7);
+  return N;
+}
+
+void main( void )
+{
+  int D, M, Y, N;
+
+  printf("Input a day ");
+  scanf("%d", &D);
+  printf("Input a month ");
+  scanf("%d", &M);
+  printf("Input a year ");
+  scanf("%d", &Y);
+  N = Day(D, M, Y);
+  switch(N)
+  {
+  case 0:  
+    printf("%d.%d.%d is Monday", D, M, Y);
+    break;
+  case 1:
+    printf("%d.%d.%d is Tuesday", D, M, Y);
+    break;
+  case 2:
+    printf("%d.%d.%d is Wednesday", D, M, Y);
+    break;
+  case 3:
+    printf("%d.%d.%d is Thursday", D, M, Y);
+    break;
+  case 4:
+    printf("%d.%d.%d is Friday", D, M, Y);
+    break;
+  case 5:
+    printf("%d.%d.%d is Saturday", D, M, Y);
+    break;
+  case 6:
+    printf("%d.%d.%d is Sunday", D, M, Y);
+    break;
+  default:
+    printf("Ops...");   
+  }
 }
